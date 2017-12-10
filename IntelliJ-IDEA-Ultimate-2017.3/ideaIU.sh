@@ -7,14 +7,15 @@ if [[ "$UID" != 0 ]]; then
     exit 1
 fi
 
-'''
 ../git.sh
 ../java.sh
 ../maven.sh
 ../mysql.sh
 ../tomcat.sh
-'''
 
 tar zxvf ../ideaIU-2017.3.tar.gz -C /usr/share/
 mv /usr/share/idea-IU-173.3727.127 /usr/share/ideaIU
 ln -s /usr/share/ideaIU/bin/idea.sh ~/
+
+chown -R cq /usr/share/tomcat9/
+apt-get install chromium-browser
