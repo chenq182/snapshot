@@ -7,6 +7,8 @@ if [[ "$UID" != 0 ]]; then
     exit 1
 fi
 
+timedatectl set-local-rtc 1
+
 add-apt-repository -y ppa:hzwhuang/ss-qt5
 apt-get update
 apt-get -y install shadowsocks-qt5
