@@ -10,8 +10,18 @@ fi
 add-apt-repository -y ppa:hzwhuang/ss-qt5
 apt-get update
 apt-get -y install shadowsocks-qt5
+# 45.77.191.57
+# AES-256-CFB
 
 apt-get -y install chromium-browser
+# chromium-browser --proxy-server="socks5://127.0.0.1:1080"
+# <proxy switchyomega>
+# https://github.com/gfwlist/gfwlist
+# https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
-curl https://get.docker.com > /tmp/install.docker.sh
-bash /tmp/install.docker.sh
+apt-get -y install curl
+curl https://get.docker.com > install.docker.sh
+bash install.docker.sh
+rm install.docker.sh
+systemctl start docker.service
+systemctl enable docker.service
