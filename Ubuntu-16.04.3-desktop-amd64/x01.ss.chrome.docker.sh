@@ -8,6 +8,13 @@ if [[ "$UID" != 0 ]]; then
 fi
 
 timedatectl set-local-rtc 1
+apt-get -y purge aisleriot
+apt-get -y purge gnome-sudoku
+apt-get -y purge gnome-mahjongg
+apt-get -y purge gnome-mines
+apt-get -y purge libreoffice*
+apt-get -y purge thunderbird*
+apt-get -y purge webbrowser-app
 
 add-apt-repository -y ppa:hzwhuang/ss-qt5
 apt-get update
@@ -21,8 +28,6 @@ apt-get -y install chromium-browser
 # https://github.com/gfwlist/gfwlist
 # https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 # <office online>
-apt-get -y purge libreoffice?
-apt-get -y purge thunderbird*
 
 apt-get -y install curl
 curl https://get.docker.com > install.docker.sh
