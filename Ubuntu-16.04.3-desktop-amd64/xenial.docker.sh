@@ -8,6 +8,9 @@ if [[ "$UID" != 0 ]]; then
 fi
 
 timedatectl set-local-rtc 1
+
+add-apt-repository -y ppa:hzwhuang/ss-qt5
+apt-get update
 apt-get -y purge aisleriot
 apt-get -y purge gnome-sudoku
 apt-get -y purge gnome-mahjongg
@@ -15,9 +18,12 @@ apt-get -y purge gnome-mines
 apt-get -y purge libreoffice*
 apt-get -y purge thunderbird*
 apt-get -y purge webbrowser-app
+# apt-get upgrade
+# l /var/cache/apt/archives/*.deb
+apt-get install vim
+echo -e "set nu\nset noai nosi" > ~/.vimrc
+sed -i 's/alF/lF/' ~/.bashrc
 
-add-apt-repository -y ppa:hzwhuang/ss-qt5
-apt-get update
 apt-get -y install shadowsocks-qt5
 # 45.77.191.57
 # AES-256-CFB
