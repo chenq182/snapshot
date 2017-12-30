@@ -21,7 +21,8 @@ apt-get -y install chromium-browser
 # https://github.com/gfwlist/gfwlist
 # https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 # <office online>
-apt-get purge libreoffice?
+apt-get -y purge libreoffice?
+apt-get -y purge thunderbird*
 
 apt-get -y install curl
 curl https://get.docker.com > install.docker.sh
